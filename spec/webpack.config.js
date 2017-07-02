@@ -60,9 +60,9 @@ module.exports = () => {
           }, {
             test: /\.scss/,
             exclude: /node_modules/,
-            loader: ExtractTextPlugin.extract({
-              fallbackLoader: "style-loader",
-              loader: [
+            use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: [
                 "css-loader",
                 "sass-loader"
               ]
