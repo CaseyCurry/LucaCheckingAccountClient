@@ -1,3 +1,4 @@
+/*eslint-env node*/
 "use strict";
 
 const bootstrapper = require("luca-spec-bootstrapper");

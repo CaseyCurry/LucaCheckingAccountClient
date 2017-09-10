@@ -2,7 +2,17 @@
 "use strict";
 
 const path = require("path");
-const clientInitializer = require("luca-client-initializer");
+const express = require("express");
+const helmet = require("helmet");
 
 const staticFileLocation = path.join(__dirname, "app");
-clientInitializer.initialize("checking-account-client", staticFileLocation);
+
+const app = express();
+app.use(helmet());
+app.use(express.static(staticFileLocation));
+
+const port = 8081;
+
+app.listen(port, () => {
+  console.log(`listening on port ${port}...`);
+});

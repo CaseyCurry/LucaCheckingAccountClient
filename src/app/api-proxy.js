@@ -1,14 +1,10 @@
 import axios from "axios";
-import serviceRegistry from "luca-service-registry-library";
 
 const api = (resource) => {
   return {
     client: axios,
     getUrl: () => {
-      return serviceRegistry.locate("checking-account-api")
-        .then(url => {
-          return `${url}/api/${resource}`;
-        });
+      return `http://192.168.56.110/api/${resource}`;
     }
   };
 };

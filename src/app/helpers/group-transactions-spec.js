@@ -1,3 +1,4 @@
+/*eslint-env node*/
 const expect = require("chai")
   .expect;
 const groupTransactions = require("./group-transactions")
