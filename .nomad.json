@@ -28,7 +28,7 @@
         },
         "Services": [{
           "Id": "/client/checking-account",
-          "Name": "checking-account-client",
+          "Name": "checkingaccount-client",
           "Tags": [
             "luca",
             "client"
