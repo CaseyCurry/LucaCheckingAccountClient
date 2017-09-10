@@ -15,7 +15,7 @@ export const categorizeTransactions = categorizeTransactionsAction(
   api("checkingaccount/states/categorized"),
   findUncategorizedTransactions);
 
-export const findCategories = findCategoriesAction;
+export const findCategories = findCategoriesAction(api("categories"));
 
 export const toggleCategoriesVisibility = toggleCategoriesVisibilityAction;
 
