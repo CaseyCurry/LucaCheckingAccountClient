@@ -9,7 +9,7 @@ const menuOptions = [{
   name: "Import",
   handleClick: async(userId, password) => {
     const url = await api.getUrl();
-    await axios.post(`${url}/transactions/states/imported`, {
+    await axios.post(`${url}/checkingaccount/states/imported`, {
       userId,
       password
     });

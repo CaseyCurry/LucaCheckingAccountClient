@@ -7,12 +7,12 @@ import toggleCategoriesVisibilityAction from "./toggle-categories-visibility";
 import toggleTransactionSelectionAction from "./toggle-transaction-selection";
 
 export const findUncategorizedTransactions =
-  findUncategorizedTransactionsAction(api("transactions/states/uncategorized"));
+  findUncategorizedTransactionsAction(api("checkingaccount/states/uncategorized"));
 
 export const toggleGroupDetailsVisibility = toggleGroupDetailsVisibilityAction;
 
 export const categorizeTransactions = categorizeTransactionsAction(
-  api("transactions/states/categorized"),
+  api("checkingaccount/states/categorized"),
   findUncategorizedTransactions);
 
 export const findCategories = findCategoriesAction;
