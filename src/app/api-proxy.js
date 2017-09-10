@@ -4,7 +4,9 @@ const api = (resource) => {
   return {
     client: axios,
     getUrl: () => {
-      return `http://192.168.56.110/api/${resource}`;
+      return new Promise((resolve) => {
+        resolve(`http://192.168.56.110/api/${resource}`);
+      });
     }
   };
 };
