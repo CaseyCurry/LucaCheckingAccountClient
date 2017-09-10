@@ -20,16 +20,12 @@ module.exports = [{
     rules: [{
       enforce: "pre",
       test: /\.(js|jsx)/,
-      exclude: /(node_modules)/,
-      use: [{
-        loader: "eslint-loader"
-      }]
+      exclude: /node_modules/,
+      loader: "eslint-loader"
     }, {
       test: /\.(js|jsx)/,
-      exclude: /(node_modules)/,
-      use: [{
-        loader: "babel-loader"
-      }]
+      exclude: /node_modules/,
+      loader: "babel-loader"
     }]
   }
 }, {
@@ -50,15 +46,11 @@ module.exports = [{
       enforce: "pre",
       test: /\.(js|jsx)/,
       exclude: /node_modules/,
-      use: [{
-        loader: "eslint-loader"
-      }]
+      loader: "eslint-loader"
     }, {
       test: /\.(js|jsx)/,
       exclude: /node_modules/,
-      use: [{
-        loader: "babel-loader"
-      }]
+      loader: "babel-loader"
     }, {
       test: /\.scss/,
       exclude: /node_modules/,

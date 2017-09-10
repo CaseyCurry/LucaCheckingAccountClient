@@ -30,9 +30,7 @@ module.exports = () => {
           rules: [{
             test: /\.js/,
             exclude: /node_modules/,
-            use: [{
-              loader: "babel-loader"
-            }]
+            loader: "babel-loader"
           }]
         }
       }, {
@@ -48,15 +46,11 @@ module.exports = () => {
             enforce: "pre",
             test: /\.(js|jsx)/,
             exclude: /node_modules/,
-            use: [{
-              loader: "eslint-loader"
-            }]
+            loader: "eslint-loader"
           }, {
             test: /\.(js|jsx)/,
             exclude: /node_modules/,
-            use: [{
-              loader: "babel-loader"
-            }]
+            loader: "babel-loader"
           }, {
             test: /\.scss/,
             exclude: /node_modules/,
