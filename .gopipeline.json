@@ -285,7 +285,7 @@
         "command": "bash",
         "arguments": [
           "-c",
-          "mkdir ./container && acbuild write ./container/users-client.$GO_REVISION.aci"
+          "mkdir ./container && acbuild write ./container/checking-account-client.$GO_REVISION.aci"
         ],
         "working_directory": null
       }, {
