@@ -18,7 +18,7 @@
         "Name": "client",
         "Driver": "rkt",
         "Config": {
-          "image": "http://192.168.56.110/checking-account-client.{{version}}.aci",
+          "image": "http://192.168.56.110/checkingaccount-client.{{version}}.aci",
           "insecure_options": [
             "image"
           ],
