@@ -95,7 +95,7 @@ Group.propTypes = {
   details: PropTypes.array.isRequired,
   areDetailsDisplayed: PropTypes.bool.isRequired,
   areCategoriesLoading: PropTypes.bool.isRequired,
-  categories: PropTypes.object,
+  categories: PropTypes.array.isRequired,
   areCategoriesDisplayed: PropTypes.bool.isRequired,
   selectedCategory: PropTypes.string,
   selectedSubcategory: PropTypes.string,

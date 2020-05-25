@@ -1,4 +1,6 @@
 import notifications from "../../../components/notifications/actions";
+import { categoriesAppSvcsUrl } from "../../../../config/settings";
+import { token } from "../../../../config/secrets";
 
 export default phrase => {
   return dispatch => {
@@ -8,8 +10,11 @@ export default phrase => {
         phrase
       }
     });
-    // TODO: move base url to config
-    fetch("http://localhost:8082/api/categories")
+    fetch(`${categoriesAppSvcsUrl}categories`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then(response => {
         if (response.status < 200 || response.status > 299) {
           dispatch(

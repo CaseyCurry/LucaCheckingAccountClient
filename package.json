@@ -2,15 +2,13 @@
   "name": "client-v2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "coverage": "nyc npm run test",
-    "test": "mocha ./src/**/*-spec.js --require babel-core/register",
+    "test": "mocha --opts mocha.opts",
     "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore",
-    "sass": "node-sass ./src/client/styles/main.scss",
     "build:dev": "webpack",
     "build:release": "webpack -p",
-    "start": "webpack-dev-server --open --hot --inline"
+    "start": "webpack-dev-server --hot --inline"
   },
   "keywords": [],
   "author": "",

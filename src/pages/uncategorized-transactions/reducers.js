@@ -5,7 +5,7 @@ const defaulSelectedGroup = {
   details: [],
   areDetailsDisplayed: false,
   areCategoriesLoading: false,
-  categories: null,
+  categories: [],
   areCategoriesDisplayed: false,
   areTransactionsBeingCategorized: false
 };

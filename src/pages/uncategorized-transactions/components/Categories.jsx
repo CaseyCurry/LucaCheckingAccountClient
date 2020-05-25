@@ -31,32 +31,31 @@ class Categories extends React.Component {
             close
           </button>
           <ul>
-            {Object.keys(this.props.categories).map(category => {
-              const subcategories = this.props.categories[category];
+            {this.props.categories.map(category => {
               return (
-                <li key={category}>
+                <li key={category.name}>
                   <div
                     onClick={e => {
                       if (this.props.categories) {
-                        this.props.onSelectCategory(category);
+                        this.props.onSelectCategory(category.name);
                         e.stopPropagation();
                       }
                     }}
                   >
-                    {category}
+                    {category.name}
                   </div>
-                  {category === this.props.selectedCategory && (
+                  {category.name === this.props.selectedCategory && (
                     <ul className="subcategories">
-                      {subcategories.map(subcategory => {
+                      {category.subcategories.map(subcategory => {
                         const displayLoader =
                           this.props.areTransactionsBeingCategorized &&
-                          this.props.selectedCategory === category &&
-                          this.props.selectedSubcategory === subcategory;
+                          this.props.selectedCategory === category.name &&
+                          this.props.selectedSubcategory === subcategory.id;
                         return (
-                          <li key={subcategory}>
+                          <li key={subcategory.id}>
                             {displayLoader && (
                               <div>
-                                <span>{subcategory}</span>
+                                <span>{subcategory.name}</span>
                                 <div className="icon-loader">
                                   <Loader />
                                 </div>
@@ -66,12 +65,14 @@ class Categories extends React.Component {
                               <span
                                 onClick={e => {
                                   if (this.props.categories) {
-                                    this.props.onSelectSubcategory(subcategory);
+                                    this.props.onSelectSubcategory(
+                                      subcategory.id
+                                    );
                                     e.stopPropagation();
                                   }
                                 }}
                               >
-                                {subcategory}
+                                {subcategory.name}
                               </span>
                             )}
                           </li>
@@ -90,7 +91,7 @@ class Categories extends React.Component {
 }
 
 Categories.propTypes = {
-  categories: PropTypes.object.isRequired,
+  categories: PropTypes.array.isRequired,
   selectedCategory: PropTypes.string,
   selectedSubcategory: PropTypes.string,
   areTransactionsBeingCategorized: PropTypes.bool.isRequired,

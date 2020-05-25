@@ -116,18 +116,17 @@ const mapDispatchToProps = dispatch => {
 const mergeProps = (propsFromState, propsFromDispatch) => {
   return Object.assign({}, propsFromState, propsFromDispatch, {
     onCategorize: () => {
-      const ids = [];
+      const transactionIds = [];
       if (propsFromState.selectedGroup.details.length) {
         propsFromState.selectedGroup.details
           .filter(transaction => transaction.isSelectedToCategorize)
-          .forEach(transaction => ids.push(transaction.id));
+          .forEach(transaction => transactionIds.push(transaction.id));
       } else {
-        ids.push(...propsFromState.selectedGroup.transactions);
+        transactionIds.push(...propsFromState.selectedGroup.transactions);
       }
       propsFromDispatch.onCategorize(
-        propsFromState.selectedCategory,
         propsFromState.selectedSubcategory,
-        ids
+        transactionIds
       );
     },
     onStartSplit: id => {

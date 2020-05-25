@@ -55,7 +55,7 @@ class UncategorizedTransactions extends React.Component {
                   categories={
                     group.phrase === this.props.selectedGroup.phrase
                       ? this.props.selectedGroup.categories
-                      : null
+                      : []
                   }
                   areCategoriesDisplayed={
                     group.phrase === this.props.selectedGroup.phrase

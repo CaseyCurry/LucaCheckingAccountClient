@@ -54,7 +54,7 @@ class Transaction extends React.Component {
           </li>
           <li>
             <label>amount:</label>
-            <span>{this.props.amount}</span>
+            <span>${this.props.amount.toLocaleString()}</span>
           </li>
           <li>
             <label>deposit:</label>
@@ -69,7 +69,6 @@ class Transaction extends React.Component {
 Transaction.propTypes = {
   isSelectedToCategorize: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
-  _rev: PropTypes.string.isRequired,
   account: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,

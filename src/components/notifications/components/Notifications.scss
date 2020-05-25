@@ -7,12 +7,18 @@ $action-height: 24px;
   top: 0;
   right: 0;
 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .actions {
     display: inline-block;
     position: relative;
     z-index: 100;
     margin-right: $notification-width + ($notification-margin * 2);
-    transition: transform .5s;
+    transition: transform 0.5s;
     transform: translateY(-100%);
 
     &.displayed {
@@ -20,20 +26,20 @@ $action-height: 24px;
       margin-top: $control-margin;
     }
 
-    >img {
-      filter: invert(.9);
+    > img {
+      filter: invert(0.9);
       height: $action-height;
       width: $action-height;
       margin-right: $control-margin;
     }
   }
 
-  >ul {
+  > ul {
     position: absolute;
     top: 0;
     right: 0;
 
-    >li {
+    > li {
       width: $notification-width;
       margin: $notification-margin $notification-margin 0 0;
 
